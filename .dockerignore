@@ -1,0 +1,23 @@
+# env
+venv
+*.env
+**/.env
+
+# data
+*.csv
+api/fixtures
+api/migrations
+
+# notebook
+*.ipynb
+*.ipynb_checkpoints
+
+# misc
+.gitignore
+**/__pycache__
+
+# git
+.git
+
+# api
+api

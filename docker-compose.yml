@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    image: gradio
+    ports:
+      - 7860:7860
+    container_name: gradio-frontend
+    command: "python app.py"
+  fastapi:
+    build: ./api
+    image: fastapi
+    ports:
+      - 8000:8000
+    container_name: fastapi-backend
+    command: "uvicorn main:app --host 0.0.0.0 --port 8000"
+    depends_on:
+      - app
